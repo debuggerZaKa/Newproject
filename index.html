@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background: url('nature.jpg') center/cover;
+            position: relative;
+        }
+
+        #loginContainer {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 90%;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        #loginForm {
+            margin-top: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #loginButton {
+            background: #4CAF50;
+            color: #fff;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2em;
+            width: 100%;
+        }
+
+        #loginButton:hover {
+            background: #45a049;
+        }
+
+        /* Panda Container */
+        #pandaContainer {
+            position: absolute;
+            top: -90px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 150px;
+            text-align: center;
+        }
+
+        /* Panda Images */
+        #pandaImageDefault,
+        #pandaImageWrong,
+        #pandaImageCorrect {
+            width: 100%;
+            height: auto;
+            display: none;
+        }
+
+        /* Default Panda Image */
+        #pandaImageDefault {
+            display: block;
+        }
+
+        /* Decrease size and move Panda Wrong Image slightly higher */
+        #pandaImageWrong {
+            width: 90%;
+            position: relative;
+            top: -10px;
+            left: 10px; /* Move image slightly to the right */
+        }
+
+        /* Animation for Panda */
+        @keyframes pandaThumbsUp {
+            0% {
+                transform: scale(0);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .animatePanda {
+            animation: pandaThumbsUp 1s ease-in-out forwards;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="loginContainer">
+        <!-- Panda Container -->
+        <div id="pandaContainer">
+            <img id="pandaImageDefault" src="panda_default.png" alt="Panda Default">
+            <img id="pandaImageWrong" src="panda_wrong.png" alt="Panda Wrong">
+            <img id="pandaImageCorrect" src="panda.png" alt="Panda Thumbs Up">
+        </div>
+
+        <h2>Login</h2>
+        <form id="loginForm" onsubmit="validateLogin(); return false;">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit" id="loginButton">Login</button>
+        </form>
+    </div>
+
+    <script>
+        function validateLogin() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            var pandaImageDefault = document.getElementById("pandaImageDefault");
+            var pandaImageWrong = document.getElementById("pandaImageWrong");
+            var pandaImageCorrect = document.getElementById("pandaImageCorrect");
+
+            if (username === "Ruhi" && password === "Ruhi1234") {
+                pandaImageDefault.style.display = "none";
+                pandaImageWrong.style.display = "none";
+                pandaImageCorrect.style.display = "block";
+                pandaImageCorrect.classList.add("animatePanda");
+
+                // Redirect after 2 seconds
+                setTimeout(function () {
+                    window.location.href = "welcome.html";
+                }, 2000);
+            } else {
+                pandaImageDefault.style.display = "none";
+                pandaImageCorrect.style.display = "none";
+                pandaImageWrong.style.display = "block";
+                pandaImageWrong.classList.add("animatePanda");
+
+                // Display alert after 2 seconds
+                setTimeout(function () {
+                    alert("Try again Ruhi!");
+                }, 2000);
+            }
+        }
+    </script>
+</body>
+
+</html>
