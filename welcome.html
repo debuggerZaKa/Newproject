@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=1.0, user-scalable=no">
+    <title>Welcome Ruhi</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('nature.jpg') center/cover no-repeat;
+            color: #FFFFFF;
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            transform-origin: center center;
+            overflow-x: hidden;
+        }
+
+        #pandaImage {
+            width: clamp(120px, 40vw, 200px);
+            height: auto;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1;
+            padding-bottom: 20px;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 10vw, 4rem);
+            margin: clamp(10px, 2vh, 20px) 0;
+            text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.7);
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: clamp(1rem, 4vw, 1.5rem);
+            margin: 0 0 clamp(15px, 3vh, 30px);
+            color: #FFFFFF;
+        }
+
+        #clickButton {
+            padding: clamp(12px, 2vh, 15px) clamp(20px, 5vw, 30px);
+            background-color: #f39c12;
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            font-size: clamp(1rem, 4vw, 1.2rem);
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            min-width: 180px;
+            max-width: 80vw;
+        }
+
+        #clickButton:hover {
+            background-color: #e67e22;
+            transform: translateY(-3px);
+        }
+
+        /* Mobile-specific layout */
+        @media (max-width: 768px) {
+            #pandaImage {
+                margin-top: 20px;
+                margin-bottom: 10px;
+                align-self: center;
+            }
+            .content {
+                justify-content: flex-start;
+                padding-top: 0;
+            }
+   body {
+                padding: 100px;
+            }
+        }
+
+        /* Adjustments for very small screens */
+        @media (max-width: 350px) {
+            body {
+                padding: 10px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            #clickButton {
+                min-width: 160px;
+                padding: 10px 20px;
+            }
+        }
+
+        /* Landscape orientation adjustments */
+        @media (orientation: landscape) and (max-height: 500px) {
+            #pandaImage {
+                width: clamp(80px, 25vh, 150px);
+                margin: 10px 0;
+            }
+            h1 {
+                font-size: clamp(1.5rem, 4vh, 2rem);
+                margin: 5px 0;
+            }
+            h2 {
+                font-size: clamp(0.8rem, 3vh, 1.2rem);
+                margin-bottom: 15px;
+            }
+            #clickButton {
+                padding: 8px 20px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <img id="pandaImage" src="panda_default.png" alt="Panda">
+    <div class="content">
+        <h1>Welcome Ruhi</h1>
+        <h2>Hope you're doing well.</h2>
+        <button id="clickButton" onclick="redirectToAnotherPage()">Click Here</button>
+    </div>
+
+    <script>
+        function redirectToAnotherPage() {
+            window.location.href = 'bday6.html';
+        }
+    </script>
+</body>
+</html>
