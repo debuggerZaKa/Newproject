@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Ruhi</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('nature.jpg') center/cover no-repeat;
+            color: #FFFFFF;
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+        }
+
+        #pandaImage {
+            width: 200px;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            font-size: 4em;
+            margin: 20px 0;
+            text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.7);
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin: 0 0 30px;
+            color: #FFFFFF;
+        }
+
+        #clickButton {
+            padding: 15px 30px;
+            background-color: #f39c12;
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2em;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        #clickButton:hover {
+            background-color: #e67e22;
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+    <img id="pandaImage" src="panda_default.png" alt="Panda">
+    <h1>Welcome Ruhi</h1>
+    <h2>Hope you're doing well.</h2>
+    <button id="clickButton" onclick="redirectToAnotherPage()">Click Here</button>
+
+    <script>
+        function redirectToAnotherPage() {
+            window.location.href = 'bday6.html';
+        }
+    </script>
+</body>
+</html>
