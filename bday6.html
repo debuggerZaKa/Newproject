@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Rohama</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: url('cakes_bg.jpg') center/cover no-repeat;
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .container {
+            position: relative;
+            width: 90%;
+            max-width: 600px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            margin: 20px 0;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin: 0;
+            color: #ffcc00;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        h2 {
+            font-size: 1.3em;
+            margin: 10px 0;
+            color: #fff;
+        }
+
+        #cakeImage {
+            width: 120px;
+            height: auto;
+            margin: 15px 0;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        #nextButton {
+            margin-top: 15px;
+            padding: 12px 25px;
+            background-color: #ff6347;
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            font-size: 1em;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        #nextButton:hover {
+            background-color: #e5533c;
+            transform: translateY(-3px);
+        }
+
+        .message {
+            font-size: 1em;
+            color: #fff;
+            margin: 15px 0;
+        }
+
+        /* Media Queries for smaller devices */
+        @media (min-width: 768px) {
+            h1 {
+                font-size: 4em;
+            }
+            
+            h2 {
+                font-size: 2em;
+            }
+            
+            #cakeImage {
+                width: 150px;
+            }
+            
+            .container {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img id="cakeImage" src="cake.png" alt="Birthday Cake">
+        <h1>Happy Birthday Ruhi!</h1>
+        <h2>Wishing you a day filled with joy and celebration!</h2>
+        <button id="nextButton" onclick="redirectToNextPage()">Next</button>
+    </div>
+
+    <script>
+        function redirectToNextPage() {
+            window.location.href = 'para.html'; 
+        }
+    </script>
+</body>
+</html>
